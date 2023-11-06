@@ -125,13 +125,13 @@ public class SysRoleController {
     @ApiOperation("查询所有记录")
     @GetMapping("findAll")
     public Result findAllRole() {
-        //TODO 模拟异常效果  ArithmeticException
-        try {
-            int i = 9/0;
-        }catch (Exception e) {
-            //手动抛出异常
-            throw new GuiguException(20001,"执行自定义异常处理");
-        }
+        // 模拟异常效果  ArithmeticException
+        // try {
+        //     int i = 9/0;
+        // }catch (Exception e) {
+        //     //手动抛出异常
+        //     throw new GuiguException(20001,"执行自定义异常处理");
+        // }
 
         //调用service
         List<SysRole> list = sysRoleService.list();

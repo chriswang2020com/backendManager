@@ -63,6 +63,14 @@ public class SysUserController {
         }
     }
 
+    @ApiOperation("cw添加用户")
+    @PostMapping("cwsave")
+    public Result cwsave(@RequestBody SysUser user){
+        boolean is_Success = sysUserService.save(user);
+        return Result.ok();
+
+    }
+
     @ApiOperation("根据id查询")
     @GetMapping("getUser/{id}")
     public Result getUser(@PathVariable String id) {
