@@ -1,9 +1,12 @@
 package com.atguigu.model.vo;
 
 
+import lombok.Data;
+
 /**
  * 登录对象
  */
+@Data
 public class LoginVo {
 
     /**
@@ -14,7 +17,9 @@ public class LoginVo {
     /**
      * 密码
      */
+
     private String password;
+
 
     public String getUsername() {
         return username;

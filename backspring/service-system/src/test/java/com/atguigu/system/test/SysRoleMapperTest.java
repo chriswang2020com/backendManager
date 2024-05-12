@@ -85,12 +85,8 @@ public class SysRoleMapperTest {
     // test method cw
     @Test
     public void testCw() {
-        SysRole sysRole = new SysRole();
-        sysRole.setRoleName("auto increment");
-        sysRole.setRoleCode("role code column");
-        sysRole.setDescription("set description column");
-        int rows = sysRoleMapper.insert(sysRole);
-        System.out.println(rows);
-
+        redisTemplate
     }
+
+
 }

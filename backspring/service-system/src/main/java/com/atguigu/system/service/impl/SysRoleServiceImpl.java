@@ -7,10 +7,12 @@ import com.atguigu.model.vo.SysRoleQueryVo;
 import com.atguigu.system.mapper.SysRoleMapper;
 import com.atguigu.system.mapper.SysUserRoleMapper;
 import com.atguigu.system.service.SysRoleService;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -40,6 +42,9 @@ public class SysRoleServiceImpl extends ServiceImpl<SysRoleMapper, SysRole> impl
         //根据用户id查询，已经分配角色
         QueryWrapper<SysUserRole> wrapper = new QueryWrapper<>();
         wrapper.eq("user_id",userId);
+        // LambdaQueryWrapper<SysUserRole> cwWrapper = new LambdaQueryWrapper<>();
+        // cwWrapper.eq(SysUserRole::getUserId, userId);
+
         List<SysUserRole> userRolesList = sysUserRoleMapper.selectList(wrapper);
         //从userRoles集合获取所有角色id
         List<String> userRoleIds = new ArrayList<>();
